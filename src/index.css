@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+  --font-sans: "Source Sans 3", sans-serif;
+  
+  --color-amber-600: #D97706;
+  --color-amber-500: #F59E0B;
+  --color-gold: #FBBF24;
+}
+
+@layer base {
+  body {
+    @apply bg-[#1A1A1A] text-white antialiased;
+  }
+}
+
+@layer utilities {
+  .text-glow-amber {
+    text-shadow: 0 0 10px rgba(217, 119, 6, 0.5);
+  }
+  .shadow-glow-amber {
+    box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+  }
+  .grain-overlay {
+    position: relative;
+  }
+  .grain-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 10;
+  }
+}
