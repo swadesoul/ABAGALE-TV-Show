@@ -122,11 +122,11 @@ export default function App() {
       <Nav />
 
       {/* 1. HERO SECTION */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden" aria-label="ABAGALE TV – Welcome">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={IMAGES.hero} 
-            alt="Cinematic Studio" 
+          <img
+            src={IMAGES.hero}
+            alt="ABAGALE TV – Premium Streaming Network for Documentaries, Original Series & Music Videos"
             className="w-full h-full object-cover scale-105"
             referrerPolicy="no-referrer"
           />
@@ -134,7 +134,7 @@ export default function App() {
         </div>
 
         <div className="relative z-10 text-center px-6">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -142,7 +142,7 @@ export default function App() {
           >
             THE AFTERMOVIE <br /> NEVER ENDS
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
@@ -215,7 +215,7 @@ export default function App() {
       </SectionReveal>
 
       {/* 3. ABOUT SECTION (THE MANIFESTO) */}
-      <SectionReveal id="about" className="relative py-32 overflow-hidden">
+      <SectionReveal id="about" className="relative py-32 overflow-hidden" aria-label="About ABAGALE – The Manifesto">
         <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none">
           <span className="font-bebas text-[20vw] whitespace-nowrap">ABAGALE TV ABAGALE TV</span>
         </div>
@@ -223,20 +223,20 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10">
-              <img 
-                src={IMAGES.about} 
-                alt="Manifesto Visual" 
+              <img
+                src={IMAGES.about}
+                alt="ABAGALE Manifesto – Abigale & Abagale Unlimited Network Vision"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent"></div>
             </div>
           </div>
-          
+
           <div className="order-1 md:order-2 space-y-8">
-            <h3 className="font-bebas text-6xl md:text-8xl tracking-tight leading-none">THE <br /> <span className="text-amber-600">MANIFESTO</span></h3>
+            <h2 className="font-bebas text-6xl md:text-8xl tracking-tight leading-none">THE <br /> <span className="text-amber-600">MANIFESTO</span></h2>
             <p className="text-xl md:text-2xl font-light leading-relaxed text-white/80">
-              ABAGALE TV serves as the premier flagship destination for the network, offering a sophisticated curation of high-impact documentaries, premium television series, and cutting-edge music videos.
+              ABAGALE TV – also known as <strong>Abagale Unlimited</strong> and <strong>Abigale TV</strong> – is the premier flagship destination for the ABAGALE network, offering a sophisticated curation of high-impact documentaries, premium television series, and cutting-edge music videos.
             </p>
             <div className="pt-6">
               <a href={AFFILIATE_URL} className="group flex items-center gap-4 font-oswald tracking-[0.3em] uppercase text-amber-500">
@@ -249,7 +249,7 @@ export default function App() {
       </SectionReveal>
 
       {/* 4. PROGRAMMING CATEGORIES (THE LINEUP) */}
-      <SectionReveal id="lineup" className="py-24 bg-black/40">
+      <SectionReveal id="lineup" className="py-24 bg-black/40" aria-label="ABAGALE TV Programming Lineup">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="font-bebas text-5xl md:text-7xl tracking-wide mb-4">THE LINEUP</h2>
@@ -258,18 +258,18 @@ export default function App() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Documentaries", img: IMAGES.docs, desc: "Epic scales & human stories." },
-              { title: "Original Series", img: IMAGES.series, desc: "Premium narrative experiences." },
-              { title: "Music Videos", img: IMAGES.music, desc: "Audio visual ascension." }
+              { title: "Documentaries", img: IMAGES.docs, desc: "Epic scales & human stories.", alt: "ABAGALE TV Documentaries – Abigale Original Documentary Films" },
+              { title: "Original Series", img: IMAGES.series, desc: "Premium narrative experiences.", alt: "ABAGALE Unlimited Original Series – Premium TV Shows by Abagale" },
+              { title: "Music Videos", img: IMAGES.music, desc: "Audio visual ascension.", alt: "ABAGALE TV Music Videos – Audio Visual Ascension" },
             ].map((item, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 whileHover={{ y: -10 }}
                 className="group relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-[#1A1A1A]"
               >
-                <img 
-                  src={item.img} 
-                  alt={item.title} 
+                <img
+                  src={item.img}
+                  alt={item.alt}
                   className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
@@ -397,15 +397,15 @@ export default function App() {
       </SectionReveal>
 
       {/* 7. JOIN NOW SECTION (THE NETWORK) */}
-      <SectionReveal className="py-32 px-6">
+      <SectionReveal id="network" className="py-32 px-6" aria-label="Join the ABAGALE Network">
         <div className="max-w-4xl mx-auto relative">
           <div className="absolute inset-0 bg-amber-600/20 blur-[120px] rounded-full"></div>
-          
+
           <div className="relative bg-white/5 backdrop-blur-2xl rounded-3xl p-8 md:p-16 border border-white/10 text-center space-y-10">
             <div className="space-y-4">
               <h2 className="font-bebas text-5xl md:text-7xl tracking-wide">JOIN THE ABAGALE NETWORK</h2>
               <p className="font-oswald text-white/60 tracking-[0.2em] uppercase max-w-xl mx-auto">
-                Gain exclusive access to premieres, behind-the-scenes content, and the global creator community.
+                Gain exclusive access to ABAGALE Unlimited premieres, behind-the-scenes content from Abigale &amp; Abagale, and the global creator community.
               </p>
             </div>
 
@@ -472,7 +472,10 @@ export default function App() {
             </a>
           </div>
 
-          <div className="pt-12 border-t border-white/5 text-center">
+          <div className="pt-12 border-t border-white/5 text-center space-y-2">
+            <p className="text-[10px] font-oswald tracking-[0.3em] text-white/20 uppercase">
+              ABAGALE TV &bull; ABAGALE Unlimited &bull; Abigale &bull; Abagale &bull; Audio Visual Ascension
+            </p>
             <p className="text-[10px] font-oswald tracking-[0.5em] text-white/20 uppercase">
               Powered by ABAGALE &copy; {new Date().getFullYear()} All Rights Reserved
             </p>
