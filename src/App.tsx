@@ -88,7 +88,13 @@ const Nav = () => {
 };
 
 export default function App() {
-  const [latestReleases, setLatestReleases] = useState<any[]>([]);
+  interface Release {
+    title: string;
+    category: string;
+    img: string;
+  }
+
+  const [latestReleases, setLatestReleases] = useState<Release[]>([]);
 
   // CMS Logic: Google Sheets Integration
   useEffect(() => {
@@ -261,9 +267,9 @@ export default function App() {
               { title: "Documentaries", img: IMAGES.docs, desc: "Epic scales & human stories." },
               { title: "Original Series", img: IMAGES.series, desc: "Premium narrative experiences." },
               { title: "Music Videos", img: IMAGES.music, desc: "Audio visual ascension." }
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
+            ].map((item) => (
+              <motion.div
+                key={item.title}
                 whileHover={{ y: -10 }}
                 className="group relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-[#1A1A1A]"
               >
@@ -307,8 +313,7 @@ export default function App() {
               style={{ borderWidth: 0 }} 
               width="100%" 
               height="600" 
-              frameBorder="0" 
-              scrolling="no"
+              frameBorder="0"
               className="w-full grayscale invert opacity-80 hover:opacity-100 transition-opacity duration-500"
             ></iframe>
           </div>
@@ -325,8 +330,8 @@ export default function App() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {latestReleases.map((release, i) => (
-              <motion.div 
-                key={i}
+              <motion.div
+                key={release.title}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
