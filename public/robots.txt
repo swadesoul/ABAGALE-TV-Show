@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://abagale.live/sitemap.xml
+
+# Crawl-delay for bots
+Crawl-delay: 1
